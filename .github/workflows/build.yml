@@ -9,4 +9,4 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@main
-        run: cmake .
+      - run: cmake .
