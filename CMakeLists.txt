@@ -3,6 +3,7 @@ project(01_homework)
 
 set(CMAKE_CXX_STANDARD 17)
 
+message(VERSION=${VERSION})
 configure_file(version.hpp.in include/version.hpp)
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR}/include @ONLY)
