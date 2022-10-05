@@ -1,0 +1,12 @@
+name: build-project
+run-name: Build is triggered by ${{ github.actor }}
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@main
+        run: cmake .
