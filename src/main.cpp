@@ -2,7 +2,7 @@
 #include "version.hpp"
 
 int build_version() {
-    return VERSION;
+    return PROJECT_VERSION_PATCH;
 }
 
 int main() {
