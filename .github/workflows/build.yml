@@ -11,7 +11,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Build
-        run: ( mkdir ./build; cd ./build && cmake -DVERSION_PATCH=${{ github.run_number }} ../ && cmake --build . && cmake --build . --target package )
+        run: ( mkdir ./build; cd ./build && cmake -DPATCH_VERSION=${{ github.run_number }} ../ && cmake --build . && cmake --build . --target package )
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
