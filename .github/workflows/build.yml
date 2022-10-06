@@ -11,7 +11,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Build
-        run: ( mkdir ./build; cd ./build && cmake ../ && cmake --build . && cpack )
+        run: ( mkdir ./build; cd ./build && cmake -DVERSION=12 ../ && cmake --build . && cmake --build . --target package )
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
@@ -19,4 +19,3 @@ jobs:
 #        uses: softprops/action-gh-release@v1
 #        with:
 #          files: |
-
