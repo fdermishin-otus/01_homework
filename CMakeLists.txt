@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.21)
 project(01_homework)
 
+set(PROJECT_VERSION 0.0.${VERSION_PATCH})
+
 message(VERSION=${VERSION})
 configure_file(version.hpp.in include/version.hpp @ONLY)
 
