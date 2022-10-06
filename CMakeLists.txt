@@ -1,8 +1,6 @@
 cmake_minimum_required(VERSION 3.21)
 project(01_homework)
 
-set(CMAKE_CXX_STANDARD 17)
-
 message(VERSION=${VERSION})
 configure_file(version.hpp.in include/version.hpp @ONLY)
 
@@ -18,4 +16,9 @@ endif ()
 
 install(
         TARGETS ${PROJECT_NAME}
+        RUNTIME DESTINATION /usr/bin
 )
+
+set(CPACK_GENERATOR DEB)
+set(CPACK_PACKAGE_CONTACT fdermishin-otus@users.noreply.github.com)
+include(CPack)
