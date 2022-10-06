@@ -6,7 +6,17 @@ on:
       - main
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@main
-      - run: cmake .
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Build
+        run: cmake .
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+#      - name: Release
+#        uses: softprops/action-gh-release@v1
+#        with:
+#          files: |
+
