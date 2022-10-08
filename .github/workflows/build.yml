@@ -15,8 +15,9 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-      - name: Release
+      - name: Show ref
         run: echo ${{ github.ref }}
+      - name: Release
         if: startsWith(${{ github.ref }}, 'refs/tags/')
         uses: softprops/action-gh-release@v1
         with:
