@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.21)
 
 set(PATCH_VERSION "1" CACHE STRING "Patch version")
-project(helloworld_cli VERSION 0.0.${PATCH_VERSION})
+project(helloworld VERSION 0.0.${PATCH_VERSION})
 
 include(FetchContent)
 FetchContent_Declare(
@@ -13,9 +13,9 @@ FetchContent_MakeAvailable(googletest)
 
 configure_file(version.hpp.in include/version.hpp @ONLY)
 
-add_executable(${PROJECT_NAME} src/main.cpp)
-target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_17)
-target_include_directories(${PROJECT_NAME} PRIVATE ${PROJECT_BINARY_DIR}/include)
+add_executable(${PROJECT_NAME}_cli src/main.cpp)
+target_compile_features(${PROJECT_NAME}_cli PUBLIC cxx_std_17)
+target_include_directories(${PROJECT_NAME}_cli PRIVATE ${PROJECT_BINARY_DIR}/include)
 
 add_executable(${PROJECT_NAME}_test test/version_test.cpp)
 target_link_libraries(${PROJECT_NAME}_test GTest::gtest_main)
@@ -31,7 +31,7 @@ if (BUILD_TESTING)
 endif ()
 
 install(
-        TARGETS ${PROJECT_NAME}
+        TARGETS ${PROJECT_NAME}_cli
         RUNTIME DESTINATION /usr/bin
 )
 
