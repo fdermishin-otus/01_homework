@@ -23,3 +23,6 @@ install(
 set(CPACK_GENERATOR DEB)
 set(CPACK_PACKAGE_CONTACT fdermishin-otus@users.noreply.github.com)
 include(CPack)
+
+message("Package name: " ${CPACK_PACKAGE_FILE_NAME})
+file(RENAME ${PROJECT_BINARY_DIR}/${CPACK_PACKAGE_FILE_NAME}.deb ${PROJECT_BINARY_DIR}/release/${CPACK_PACKAGE_FILE_NAME}.deb)
