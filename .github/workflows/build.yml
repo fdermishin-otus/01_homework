@@ -15,7 +15,7 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-#      - name: Release
-#        uses: softprops/action-gh-release@v0.1.14
-#        with:
-#          files: |
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: release/*
