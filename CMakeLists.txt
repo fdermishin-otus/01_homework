@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.21)
 
-set(PATCH_VERSION "1" CACHE STRING "Patch version")
+if (NOT DEFINED PATCH_VERSION)
+    set(PATCH_VERSION "1")
+endif ()
 project(helloworld VERSION 0.0.${PATCH_VERSION})
 
 include(FetchContent)
