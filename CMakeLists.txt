@@ -35,7 +35,14 @@ install(
         RUNTIME DESTINATION bin
 )
 
-set(CPACK_GENERATOR DEB)
-set(CPACK_PACKAGE_CONTACT fdermishin-otus@users.noreply.github.com)
-SET(CPACK_OUTPUT_FILE_PREFIX ${PROJECT_SOURCE_DIR}/release)
-include(CPack)
+if (APPLE)
+    message("Packing DragNDrop for MacOS")
+    set(CPACK_GENERATOR DragNDrop)
+    include(CPack)
+elseif (UNUX)
+    message("Packing DEB")
+    set(CPACK_GENERATOR DEB)
+    set(CPACK_PACKAGE_CONTACT fdermishin-otus@users.noreply.github.com)
+    SET(CPACK_OUTPUT_FILE_PREFIX ${PROJECT_SOURCE_DIR}/release)
+    include(CPack)
+endif ()
