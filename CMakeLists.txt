@@ -32,7 +32,7 @@ endif ()
 
 install(
         TARGETS ${PROJECT_NAME}_cli
-        RUNTIME DESTINATION /usr/bin
+        RUNTIME DESTINATION bin
 )
 
 set(CPACK_GENERATOR DEB)
